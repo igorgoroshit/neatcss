@@ -31,9 +31,14 @@
 		margin-left: @base-line;
 	}
 
-	&.navbar-right li {
+	[dir=ltr] &.navbar-right li {
 		margin-right: 0;
 		margin-left: @base-line;
+	}
+
+	[dir=rtl] &.navbar-left li {
+		margin-left: 0;
+		margin-right: @base-line;
 	}
 
 	& a,
@@ -41,7 +46,7 @@
 		display: block;
 		text-decoration: none;
 	}
-	
+
 	& a:hover {
 		color: @color-link-hover;
 		text-decoration: underline;
