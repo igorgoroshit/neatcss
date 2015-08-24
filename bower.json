@@ -1,0 +1,26 @@
+{
+  "name": "kube-framework",
+  "version": "4.0.3",
+  "homepage": "https://github.com/igorgoroshit/kube",
+  "authors": [
+    "Igor Goroshit @ WebTech"
+  ],
+  "description": "Kube Framework",
+  "main": "css/kube.css",
+  "homepage": "http://imperavi.com/",
+  "keywords": [
+    "kube",
+    "css",
+    "scss",
+    "framework",
+    "imperavi"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
