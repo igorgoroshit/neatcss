@@ -107,10 +107,17 @@ ul ol,
 ol ul {
 	margin: 0 0 0 @base-line * 2;
 }
+
 ul li,
 ol li {
-	text-align: left;
+	[dir=ltr] & {
+		text-align: left;
+	}
+	[dir=rtl] & {
+		text-align: right;
+	}
 }
+
 ol ol li {
 	list-style-type: lower-alpha;
 }
