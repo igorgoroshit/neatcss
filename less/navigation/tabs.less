@@ -1,0 +1,44 @@
+/* =Tabs
+-----------------------------------------------------------------------------*/
+.nav-tabs {
+	border-bottom: 1px solid #e3e3e3;
+	margin-bottom: @base-line;
+	.clearfix;
+
+	& ul {
+		list-style: none;
+		margin: 0;
+	}
+	& li {
+		float: left;
+		margin-right: 2px;
+	}
+	& a,
+	& span {
+		display: block;
+		line-height: 1;
+		padding: @base-line/2 @base-line;
+		border: 1px solid transparent;
+	}
+	& a {
+		color: rgba(0, 0, 0, .5);
+		text-decoration: none;
+		&:focus,
+		&:hover {
+			color: @color-black;
+			text-decoration: underline;
+			background-color: #eee;
+		}
+	}
+	& li.active a,
+	& span {
+		color: @color-black;
+		background: #fff;
+		position: relative;
+		border: 1px solid #ddd;
+		border-bottom: 1px solid #fff;
+		bottom: -1px;
+		cursor: default;
+		text-decoration: none;
+	}
+}

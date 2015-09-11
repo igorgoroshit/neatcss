@@ -1,0 +1,37 @@
+/* =Pagination
+-----------------------------------------------------------------------------*/
+.pagination {
+	position: relative;
+	left: -9px;
+	margin-left: 0;
+	list-style: none;
+	.clearfix;
+
+	& li {
+		float: left;
+		margin-right: 2px;
+	}
+	& a,
+	& span {
+		display: block;
+		padding: 7px 9px;
+		line-height: 1;
+		border-radius: 2px;
+		color: @color-black;
+		text-decoration: none;
+	}
+	& span,
+	& li.active a,
+	& li.active a:hover {
+		color: @color-white;
+		background-color: @color-black;
+		cursor: text;
+	}
+	& a:focus,
+	& a:hover {
+		text-decoration: none;
+		background-color: @color-black;
+		color: #fff;
+	}
+
+}

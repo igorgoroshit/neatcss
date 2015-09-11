@@ -1,5 +1,5 @@
 /*
-	Kube Framework 4
+	Cube Framework 4
 */
 
 @import "mixins.less";
@@ -8,16 +8,27 @@
 @import "reset-bidi.less";
 @import "typography.less";
 
-@import "grid-bidi.less";
+
+//layout
+@import "grid.less";
 @import "blocks.less";
+@import "responsive.less";
 
 @import "tables.less";
 @import "forms.less";
 
-@import "navigation-bidi.less";
-@import "buttons.less";
 
-@import "notifications.less";
+
+//navigation
+@import "navigation/navigation.less";
+@import "navigation/tabs.less";
+@import "navigation/breadcrumbs.less";
+@import "navigation/pagination.less";
+@import "navigation/responsive.less";
+
+@import "buttons/buttons.less";
+
+//@import "notifications.less";
 
 //@import "labels.less";
 
@@ -25,11 +36,11 @@
 //@import "accordion.less";
 //@import "filterbox.less";
 //@import "tooltip.less";
-@import "dropdown.less";
+//@import "dropdown.less";
 //@import "livesearch.less";
-@import "upload.less";
+//@import "upload.less";
 //@import "autocomplete.less";
-@import "modal.less";
+//@import "modal.less";
 
 @import "helpers.less";
 //@import "prettyprint.less";
@@ -38,7 +49,6 @@
 @import "grid-responsive.less";
 @import "blocks-responsive.less";
 @import "typography-responsive.less";
-@import "navigation-responsive.less";
 @import "forms-responsive.less";
 
 @import "print.less";
