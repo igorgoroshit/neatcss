@@ -20,7 +20,7 @@
 .forms {
 	& label {
 		display: block;
-		margin-bottom: @base-line / 1.5;
+		// margin-bottom: @base-line / 1.5;
 	}
 
 	& input[type="text"],
@@ -116,6 +116,10 @@ input[type="search"],
 input[type="datetime-local"],
 textarea {
 	.transition(border ease .5s);
+}
+
+textarea {
+	resize: none;
 }
 
 
