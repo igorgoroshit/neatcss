@@ -99,7 +99,7 @@ h6 {
 	border: 0;
 	outline: 0;
 	font-size: 100%;
-	vertical-align: baseline;
+	vertical-align: middle;
 	background: transparent;
 }
 
@@ -159,35 +159,32 @@ table {
 caption,
 th,
 td {
-	text-align: left;
-	vertical-align: top;
+	vertical-align: middle;
 }
 
 [dir=ltr] caption,
 [dir=ltr] th,
 [dir=ltr] td {
 	text-align: left;
-	vertical-align: top;
 }
 
 [dir=rtl] caption,
 [dir=rtl] th,
 [dir=rtl] td {
 	text-align: right;
-	vertical-align: top;
 }
 
 thead th,
 thead td {
 	font-weight: bold;
-	vertical-align: bottom;
+	vertical-align: middle;
 }
 
 /* Image inside */
 a img,
 th img,
 td img {
-	vertical-align: top;
+	vertical-align: middle;
 }
 
 button,
@@ -196,10 +193,11 @@ select,
 textarea {
 	margin: 0;
 }
+
 textarea {
 	overflow: auto;
 	vertical-align: top;
-	resize: vertical;
+	resize: none;
 }
 
 /* Normalize buttons in IE */
@@ -254,16 +252,19 @@ embed,
 object {
 	max-width: 100%;
 }
+
 img,
 video,
 embed,
 object {
 	height: auto;
 }
+
 embed,
 object {
     height: 100%;
 }
+
 img {
 	vertical-align: middle;
 	-ms-interpolation-mode: bicubic;
