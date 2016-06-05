@@ -23,8 +23,12 @@
 	.units-row .unit-10 {
 		width: 100%;
 		float: none;
-		margin-left: 0;
-		margin-bottom: @base-line;
+		margin-bottom: @base-line / 3;
+		[dir=ltr] &,
+		[dir=rtl] &{
+			margin-left: 0;
+			margin-right: 0;
+		}
 	}
 
 	.unit-push-90,
@@ -43,6 +47,7 @@
 	.unit-push-20,
 	.unit-push-10 {
 		left: 0;
+		right: 0;
 	}
 
 	.units-row .unit-push-right {
