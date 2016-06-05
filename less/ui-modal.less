@@ -1,0 +1,125 @@
+html.modal-is-locked {
+  overflow: hidden;
+  touch-action: none;
+}
+
+/* Anti FOUC */
+
+/*
+.modal,
+[data-modal-id] {
+  display: none;
+}
+*/
+
+/* Necessary styles of the overlay */
+
+.modal-overlay {
+  position: fixed;
+  z-index: 9999;
+  top: -5000px;
+  right: -5000px;
+  bottom: -5000px;
+  left: -5000px;
+  /*display: none;*/
+}
+
+/* Necessary styles of the wrapper */
+
+.modal-wrapper {
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /*display: none;*/
+  overflow: auto;
+  text-align: center;
+  -webkit-overflow-scrolling: touch;
+  padding: 10px 10px 0;
+  white-space: nowrap;
+}
+
+.modal-wrapper:after {
+  display: inline-block;
+  height: 100%;
+  margin-left: -0.05em;
+  content: "";
+}
+
+/* Fix iPad, iPhone glitches */
+
+.modal-overlay,
+.modal-wrapper {
+  backface-visibility: hidden;
+}
+
+/* Necessary styles of the modal dialog */
+
+.modal {
+  position: relative;
+  outline: none;
+  text-size-adjust: 100%;
+  white-space: normal;
+  margin-bottom: 10px;
+}
+
+.modal {
+  /* Disable Anti-FOUC */
+  display: inline-block;
+}
+
+[dir=rtl] .modal {
+  text-align: right;
+}
+
+[dir=ltr] .modal {
+  text-align: left;
+}
+
+/* template */
+
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-wrapper {
+  padding: 10px 10px 0;
+}
+
+.modal,
+.modal-wrapper:after {
+  vertical-align: middle;
+}
+
+.modal-close {
+    font-size: 40px;
+    left: 16px;
+    position: absolute;
+    top: 15px;
+    color: #82868c;
+    cursor: pointer;
+}
+
+.modal header {
+  overflow: hidden;
+  font-size: 23px;
+  color: #7cc546;
+  padding: 15px 20px;
+  font-weight: bold;
+  background-color: #fff;
+}
+
+.modal section {
+  overflow: hidden;
+  padding: 0 20px;
+  background-color: #fff;
+}
+
+.modal footer {
+  overflow: auto;
+  padding: 15px 20px;
+  clear: both;
+  background-color: #fff;
+}
