@@ -5,15 +5,15 @@
 .blocks-4,
 .blocks-5,
 .blocks-6 {
-	padding-left: 0;
+	padding: 0;
+	margin: 0;
 	list-style: none;
-	margin-left: -@grid-gutter-width / (@grid-width / 100) * 1%;
 	.clearfix;
 	& > li {
+
 		height: auto;
-		float: left;
-		margin-bottom: @base-line;
-		margin-left: @grid-gutter-width / (@grid-width / 100) * 1%;
+		margin-bottom: @blocks-gutter-width;
+		
 		& ul {
 			list-style-type: disc;
 		}
@@ -24,6 +24,24 @@
 			float: none;
 			margin: 0;
 		}
+	}
+
+	[dir=rtl] & {
+		margin-right: -@blocks-gutter-width / (@blocks-width / 100) * 1%;
+	}
+
+	[dir=rtl] & > li {
+		float: right;
+		margin-right: @blocks-gutter-width / (@blocks-width / 100) * 1%;
+	}
+
+	[dir=ltr] & {
+		margin-left: -@blocks-gutter-width / (@blocks-width / 100) * 1%;
+	}
+
+	[dir=ltr] & > li {
+		float: left;
+		margin-left: @blocks-gutter-width / (@blocks-width / 100) * 1%;
 	}
 
 }

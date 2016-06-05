@@ -95,7 +95,7 @@
 	.blocks-5,
 	.blocks-6 {
 		margin-left: 0;
-		margin-bottom: @base-line;
+		margin-right: 0;
 	}
 
 	.blocks-2 > li,
@@ -105,17 +105,30 @@
 	.blocks-6 > li {
 		float: none;
 		margin-left: 0;
+		margin-right: 0;
 		width: 100%;
 	}
 
-	.blocks-mobile-50 > li,
-	.blocks-mobile-33 > li {
+	[dir=ltr] .blocks-mobile-50 > li,
+	[dir=ltr] .blocks-mobile-33 > li {
 		float: left;
-		margin-left: @grid-gutter-width/(@grid-width/100)*1%;
+		margin-left: @blocks-gutter-width/(@blocks-width/100)*1%;
 	}
-	.blocks-mobile-33,
-	.blocks-mobile-50 {
-		margin-left: -@grid-gutter-width/(@grid-width/100)*1%;
+
+	[dir=ltr] .blocks-mobile-33,
+	[dir=ltr] .blocks-mobile-50 {
+		margin-left: -@blocks-gutter-width/(@blocks-width/100)*1%;
+	}
+
+	[dir=rtl] .blocks-mobile-50 > li,
+	[dir=rtl] .blocks-mobile-33 > li {
+		float: right;
+		margin-right: @blocks-gutter-width/(@blocks-width/100)*1%;
+	}
+
+	[dir=rtl] .blocks-mobile-33,
+	[dir=rtl] .blocks-mobile-50 {
+		margin-right: -@blocks-gutter-width/(@blocks-width/100)*1%;
 	}
 
 	.blocks-mobile-50 > li {
