@@ -140,3 +140,25 @@
 	}
 }
 
+
+/* =ScrollLock
+-----------------------------------------------------------------------------*/
+html.noscroll {
+  overflow: hidden;
+  touch-action: none;
+}
+
+html.noscroll body {
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow: hidden;
+	position: fixed;
+	-webkit-overflow-scrolling: touch;
+	-webkit-transform: translate3d(0, 0, 0);
+	height: 100%;
+	max-height: 100%;
+	z-index: 1000;	
+}
+
