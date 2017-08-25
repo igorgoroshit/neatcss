@@ -1,19 +1,14 @@
 {
-  "name": "kube4-framework",
-  "version": "4.0.3",
-  "homepage": "https://github.com/igorgoroshit/kube",
+  "name": "neatcss",
+  "version": "0.0.1",
+  "homepage": "https://github.com/igorgoroshit/neatcss",
   "authors": [
     "Igor Goroshit @ WebTech"
   ],
-  "description": "Kube Framework",
-  "main": "css/kube.css",
-  "homepage": "http://imperavi.com/",
+  "description": "NeatCSS Framework",
+  "main": "css/neat.css",
+  "homepage": "http://webt.co.il/",
   "keywords": [
-    "kube",
-    "css",
-    "scss",
-    "framework",
-    "imperavi"
   ],
   "license": "MIT",
   "ignore": [
