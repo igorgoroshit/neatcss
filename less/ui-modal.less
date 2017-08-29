@@ -64,6 +64,9 @@ html.modal-is-locked {
   text-size-adjust: 100%;
   white-space: normal;
   margin-bottom: @modal-margin * 1px;
+  border-radius: @modal-border-radius;
+  border: 1px solid transparent;
+  border-color: @modal-border-color;
 }
 
 .modal {
@@ -93,7 +96,8 @@ html.modal-is-locked {
   vertical-align: middle;
 }
 
-.modal-close {
+.modal-close,
+.modal_close {
   position: absolute;
   top: 0;
   left: 0;
@@ -102,26 +106,33 @@ html.modal-is-locked {
   cursor: pointer;
 }
 
-.modal header {
+.modal header,
+.modal_header {
   overflow: hidden;
   font-size: @font-size-h2-lg;
   padding: (@modal-padding * 1px);
   padding-left: (@modal-padding * 3 * 1px);
   font-weight: bold;
   background-color: @color-white;
+  border-radius: @modal-border-radius @modal-border-radius 0 0;
+  .clearfix;
 }
 
-.modal section {
+.modal section,
+.modal_section {
   padding: 0 (@modal-padding * 1px);
   background-color: @color-white;
   .clearfix;
 }
 
-.modal footer {
+.modal footer,
+.modal_footer {
   overflow: hidden;
   padding: (@modal-padding * 1px);
   clear: both;
   background-color: @color-white;
+  border-radius: 0 0 @modal-border-radius @modal-border-radius;
+  .clearfix;
 }
 
 // responsive 
@@ -131,21 +142,25 @@ html.modal-is-locked {
     width: 100%;
   }
 
-  .modal-close {
+  .modal-close,
+  .modal_close {
     padding: ((@modal-padding / 2) * 1px);
     font-size: @font-size-h1-sm;
   }
 
-  .modal header {
+  .modal header,
+  .modal_header {
     padding: ((@modal-padding / 2) * 1px); 
     font-size: @font-size-h2-sm;
   }
 
-  .modal section {
+  .modal section,
+  .modal_section {
     padding: 0 ((@modal-padding / 2) * 1px);
   }
 
-  .modal footer {
+  .modal footer,
+  .modal_footer {
     padding: ((@modal-padding / 2) * 1px);
   }
 

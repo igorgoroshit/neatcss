@@ -1,0 +1,43 @@
+.row,
+.units-container,
+.units-row,
+.grid {
+  .clearfix;
+}
+
+.units-container { /* it's the trick to not collapse padding-top in the child element */
+  padding-top: 1px;
+  margin-top: -1px;
+}
+
+.row,
+.units-row {
+ /* margin-bottom: @base-line;*/
+
+  & .unit-role-right {
+    margin-left: @grid-gutter-width/(@grid-width/100)*1%;
+    float: right;
+  }
+  
+  & .unit-role-left {
+    margin-left: 0;
+  }
+}
+
+.grid {
+  /*margin-bottom:  @base-line;*/
+
+  [dir=ltr] & {
+    margin-left: -@ngrid-gutter-width;
+  }
+
+  [dir=rtl] & {
+    margin-right: -@ngrid-gutter-width;
+  }
+}
+
+.centered,
+.unit-centered {
+  float: none !important;
+  margin: 0 auto !important;
+}

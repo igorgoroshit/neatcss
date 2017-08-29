@@ -185,6 +185,21 @@
 	left: ((((@grid-width - (@grid-gutter-width * (@num - 1))) / @num / (@grid-width / 100)) * @factor) + ((@grid-gutter-width / (@grid-width / 100)) * (@factor - 1)) + @grid-gutter-width/(@grid-width/100)) * 1%;
 }
 
+// New Grid
+.col(@num) {
+	width: calc((100 / @ngrid-columns * @num) * 1% ~"-" @ngrid-gutter-width);
+}
+
+.ncolumn(@num) {
+	width: calc((100 / @num) * 1% ~"-" @ngrid-gutter-width);
+}
+
+.ncolumns(@factor, @num) {
+	width: calc((@factor / @num * 100) * 1% ~"-" @ngrid-gutter-width);
+}
+
+// Gradients
+
 // Buttons
 .make-color-btn(@color, @color-dark, @color-text, @active-shadow: .5) {
 
@@ -196,13 +211,16 @@
 		background: @color-dark;
 	}
 
-
+	&.active,
 	&.btn-active {
 		box-shadow: 0 1px 4px rgba(0, 0, 0, @active-shadow) inset;
 	}
 
+	&.active,
 	&.btn-active,
+	&.disabled,
 	&.btn-disabled,
+	&[disabled],
 	&.btn[disabled] {
 		color: rgba(red(@color-text), green(@color-text), blue(@color-text), .5);
 		background: @color-dark;
@@ -211,6 +229,7 @@
 		}
 	}
 
+	&.outline
 	&.btn-outline {
 		background: none;
 		border-color: @color;
@@ -221,6 +240,8 @@
 		}
 	}
 
+	&.outline[disabled],
+	&.outline.disabled,
 	&.btn-outline.btn[disabled],
 	&.btn-outline.btn-disabled {
 		background: none;
@@ -228,6 +249,8 @@
 		color: rgba(red(@color), green(@color), blue(@color), .4);
 		border: 1px solid rgba(red(@color), green(@color), blue(@color), .3);
 	}
+
+	&.outline.active,
 	&.btn-outline.btn-active {
 		background: none;
 		color: rgba(red(@color), green(@color), blue(@color), .6);
@@ -235,3 +258,35 @@
 		box-shadow: 0 1px 3px rgba(red(@color-dark), green(@color-dark), blue(@color-dark), .6) inset;
 	}
 }
+
+
+
+// Buttons
+.button(@bg1-color, @bg2-color, @border-color, @text-color, @text-shadow: 0 -1px 0 rgba(0,0,0,.25)) {
+
+	color: @text-color;
+	background-color: mix(@bg1-color, @bg2-color, 60%);
+	background-image: linear-gradient(to bottom, @bg1-color, @bg2-color); // Standard, IE10
+	background-repeat: repeat-x;
+	filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@bg1-color),argb(@bg2-color))); // IE9 and down
+  border-color: @border-color @border-color darken(@border-color, 15%);
+
+	&:hover {
+		background: none;
+		background-color: @bg2-color;
+	}
+
+	&.active,
+	&.btn-active {
+		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+	}
+
+	&.active,
+	&.disabled,
+	&[disabled],
+	&.button[disabled] {
+		background-color: @bg2-color;
+	}
+
+}
+

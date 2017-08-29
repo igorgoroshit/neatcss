@@ -1,57 +1,119 @@
 /* =Buttons
 -----------------------------------------------------------------------------*/
+button.default,
+button,
+.button,
 .btn,
+input[type="button"],
+input[type="submit"],
 input[type="submit"].btn {
-	display: inline-block;
-	vertical-align: top;
 
-	font-family: @font-family-controls;
-	font-size: 1em;
-	font-weight: 400;
+	display: 						inline-block;
+	vertical-align: 		middle;
 
-	line-height: @base-line;
+	font-family: 				@buttons-font-family;
+	font-size: 					@button-font-size;
+	font-weight: 				@button-font-weight;
 
-    text-align: center;
-	text-decoration: none;
+	line-height: 				@button-base-line;
+	min-height:					@button-height;
 
+  text-align: 				center;
+	text-decoration: 		none;
+	letter-spacing:     @button-letter-spacing;
 	-webkit-appearance: none;
 
-	outline: none;
-	margin: 0;
-	border: none;
-	border-radius: 2px;
-	box-shadow: none;
-	cursor: pointer;
-	padding: @padding-btn;
+	outline: 						none;
+	margin: 						0;
 
-	color: @color-body;
-	background: @color-gray;
+	border-radius:			@button-border-radius;
+	box-shadow: 				none;
+	cursor: 						pointer;
+	padding: 						@button-padding-tb @button-padding-rl;
+
+	border: 1px solid transparent;
+
+	.button(
+		@button-default-bg1-color, 
+		@button-default-bg2-color, 
+		@button-default-border-color,
+		@button-default-text-color
+	);
 
 	&:hover {
-		color: rgba(0, 0, 0, .5);
-		background: @color-gray-dark;
+		background-color: @button-default-bg2-color;
 	}
 }
+
+button::-moz-focus-inner,
+.button::-moz-focus-inner,
+.btn::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
 .btn::-moz-focus-inner {
 	border: 0;
 	padding: 0;
 }
-.btn-big,
-input[type="submit"].btn-big {
-	font-size: @font-size-big;
-}
-.btn-small,
-input[type="submit"].btn-small {
-	font-size: @font-size-small;
-}
+
+button.tiny,
+.button.tiny,
+.btn.tiny,
+input[type="button"].tiny,
+input[type="submit"].tiny,
+.btn-tiny,
+input[type="submit"].btn-tiny,
+button.smaller,
+.button.smaller,
+.btn.smaller,
+input[type="button"].smaller,
+input[type="submit"].smaller,
 .btn-smaller,
 input[type="submit"].btn-smaller {
-	font-size: @font-size-smaller;
-	vertical-align: baseline;
+	padding: 			 @button-padding-tiny-tb @button-padding-tiny-rl;
+	font-size: 		 @button-font-size-tiny;
+	min-height:		 @button-height-tiny;
+	border-radius: @button-border-radius-tiny;
 }
-.btn-round {
-	border-radius: 15px;
+
+button.small,
+.button.small,
+.btn.small,
+input[type="button"].small,
+input[type="submit"].small,
+.btn-small,
+input[type="submit"].btn-small {
+	padding: 			 @button-padding-small-tb @button-padding-small-rl;
+	font-size: 		 @button-font-size-small;
+	min-height:		 @button-height-small;
+	border-radius: @button-border-radius-small;
 }
+
+button.big,
+.button.big,
+.btn.big,
+input[type="button"].big,
+input[type="submit"].big,
+.btn-big,
+input[type="submit"].btn-big {
+	padding: 			 @button-padding-big-tb @button-padding-big-rl;
+	font-size: 		 @button-font-size-big;
+	min-height:		 @button-height-big;
+	border-radius: @button-border-radius-big;
+}
+
+button.large,
+.button.large,
+.btn.large,
+input[type="button"].large,
+input[type="submit"].large,
+.btn-large,
+input[type="submit"].btn-large {
+	padding: 			 @button-padding-large-tb @button-padding-large-rl;
+	font-size: 		 @button-font-size-large;
+	min-height:		 @button-height-large;
+	border-radius: @button-border-radius-large;
+}
+
 .btn-outline,
 input[type="submit"].btn-outline {
 
@@ -62,13 +124,16 @@ input[type="submit"].btn-outline {
 		border-color: @color-gray-dark;
 	}
 }
+
 .btn-outline.btn-active {
 	padding: @padding-btn;
 }
+
 .btn-outline.bold {
 	border-width: 2px;
 	padding: @padding-btn-outline-bold;
 }
+
 .btn-active,
 .btn[disabled],
 .btn-disabled {
@@ -80,9 +145,11 @@ input[type="submit"].btn-outline {
 		background: @color-gray-dark;
 	}
 }
+
 .btn-active {
 	box-shadow: 0 1px 3px rgba(0, 0, 0, .4) inset;
 }
+
 .btn-outline.btn[disabled],
 .btn-outline.btn-disabled {
 	background: none;
@@ -90,44 +157,196 @@ input[type="submit"].btn-outline {
 	color: rgba(0, 0, 0, .3);
 	border: 1px solid rgba(0, 0, 0, .1);
 }
+
 .btn-outline.btn-active {
 	background: none;
 	color: rgba(0, 0, 0, .4);
 	border: none;
 	box-shadow: 0 1px 3px rgba(0, 0, 0, .2) inset;
 }
+
 .btn[disabled],
 .btn-disabled {
 	cursor: default;
 	box-shadow: none;
 }
 
+a.button.link,
+button.link,
+.button.link,
+input[type="button"].link,
+input[type="submit"].link {
+	.button(
+		@button-link-bg1-color, 
+		@button-link-bg2-color, 
+		@button-link-border-color,
+		@button-link-text-color
+	);
+	
+	&.active {
+		box-shadow: none;
+	}
 
+	&:hover {
+		color: @link-hover-color;
+		text-decoration: underline;
+	}
+}
+
+button.primary,
+.button.primary,
+input[type="button"].primary,
+input[type="submit"].primary {
+	.button(
+		@button-primary-bg1-color, 
+		@button-primary-bg2-color, 
+		@button-primary-border-color,
+		@button-primary-text-color
+	);
+}
+
+button.primary,
+.button.primary,
+input[type="button"].primary,
+input[type="submit"].primary {
+	.button(
+		@button-primary-bg1-color, 
+		@button-primary-bg2-color, 
+		@button-primary-border-color,
+		@button-primary-text-color
+	);
+}
+
+button.secondary,
+.button.secondary,
+input[type="button"].secondary,
+input[type="submit"].secondary {
+	.button(
+		@button-secondary-bg1-color, 
+		@button-secondary-bg2-color, 
+		@button-secondary-border-color,
+		@button-secondary-text-color
+	);
+}
+
+button.success,
+.button.success,
+input[type="button"].success,
+input[type="submit"].success {
+	.button(
+		@button-success-bg1-color, 
+		@button-success-bg2-color, 
+		@button-success-border-color,
+		@button-success-text-color
+	);
+}
+
+button.info,
+.button.info,
+input[type="button"].info,
+input[type="submit"].info {
+	.button(
+		@button-info-bg1-color, 
+		@button-info-bg2-color, 
+		@button-info-border-color,
+		@button-info-text-color
+	);
+}
+
+button.warning,
+.button.warning,
+input[type="button"].warning,
+input[type="submit"].warning {
+	.button(
+		@button-warning-bg1-color, 
+		@button-warning-bg2-color, 
+		@button-warning-border-color,
+		@button-warning-text-color
+	);
+}
+
+button.danger,
+.button.danger,
+input[type="button"].danger,
+input[type="submit"].danger {
+	.button(
+		@button-danger-bg1-color, 
+		@button-danger-bg2-color, 
+		@button-danger-border-color,
+		@button-danger-text-color
+	);
+}
+
+button.inverse,
+.button.inverse,
+input[type="button"].inverse,
+input[type="submit"].inverse {
+	.button(
+		@button-inverse-bg1-color, 
+		@button-inverse-bg2-color, 
+		@button-inverse-border-color,
+		@button-inverse-text-color
+	);
+}
+
+button.blue,
+.button.blue,
+input[type="button"].blue,
+input[type="submit"].blue,
 .btn-blue,
 input[type="submit"].btn-blue {
 	.make-color-btn(@color-blue, @color-blue-dark, #fff);
 }
+
+button.red,
+.button.red,
+input[type="button"].red,
+input[type="submit"].red,
 .btn-red,
 input[type="submit"].btn-red {
 	.make-color-btn(@color-red, @color-red-dark, #fff);
 }
+
+button.green,
+.button.green,
+input[type="button"].green,
+input[type="submit"].green,
 .btn-green,
 input[type="submit"].btn-green {
 	.make-color-btn(@color-green, @color-green-dark, #fff);
 }
+
+button.black,
+.button.black,
+input[type="button"].black,
+input[type="submit"].black,
 .btn-black,
 input[type="submit"].btn-black {
 	.make-color-btn(@color-black, @color-black-light, #fff, .7);
 }
+
+button.yellow,
+.button.yellow,
+input[type="button"].yellow,
+input[type="submit"].yellow,
 .btn-yellow,
 input[type="submit"].btn-yellow {
 	.make-color-btn(@color-yellow, @color-yellow-dark, #000);
 }
+
+button.white,
+.button.white,
+input[type="button"].white,
+input[type="submit"].white,
 .btn-white,
 input[type="submit"].btn-white {
 	.make-color-btn(@color-white, darken(#fff, 7%), #000, .2);
 }
 
+button.white,
+.button.white,
+input[type="button"].white,
+input[type="submit"].white,
 .btn-white {
 	&.btn-outline.btn-active {
 		box-shadow: none;

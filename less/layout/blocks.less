@@ -9,6 +9,7 @@
 	margin: 0;
 	list-style: none;
 	.clearfix;
+	& > .blocks_item,
 	& > li {
 
 		height: auto;
@@ -30,6 +31,7 @@
 		margin-right: -@blocks-gutter-width / (@blocks-width / 100) * 1%;
 	}
 
+	[dir=rtl] & > .blocks_item,
 	[dir=rtl] & > li {
 		float: right;
 		margin-right: @blocks-gutter-width / (@blocks-width / 100) * 1%;
@@ -39,6 +41,7 @@
 		margin-left: -@blocks-gutter-width / (@blocks-width / 100) * 1%;
 	}
 
+	[dir=ltr] & > .blocks_item,
 	[dir=ltr] & > li {
 		float: left;
 		margin-left: @blocks-gutter-width / (@blocks-width / 100) * 1%;
@@ -46,11 +49,11 @@
 
 }
 
-.blocks-2 > li { .block(2); }
-.blocks-3 > li { .block(3); }
-.blocks-4 > li { .block(4); }
-.blocks-5 > li { .block(5); }
-.blocks-6 > li { .block(6); }
+.blocks-2 > .blocks_item, .blocks-2 > li { .block(2); }
+.blocks-3 > .blocks_item, .blocks-3 > li { .block(3); }
+.blocks-4 > .blocks_item, .blocks-4 > li { .block(4); }
+.blocks-5 > .blocks_item, .blocks-5 > li { .block(5); }
+.blocks-6 > .blocks_item, .blocks-6 > li { .block(6); }
 
 .block-first {
 	clear: both;
