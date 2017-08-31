@@ -24,16 +24,20 @@
   }
 }
 
+
+.row,
 .grid {
   /*margin-bottom:  @base-line;*/
 
-  [dir=ltr] & {
-    margin-left: -@ngrid-gutter-width;
-  }
+  margin-left: -@ngrid-gutter-width / 2;
+  margin-right: -@ngrid-gutter-width / 2;
+  // [dir=ltr] & {
+  //   margin-left: -@ngrid-gutter-width;
+  // }
 
-  [dir=rtl] & {
-    margin-right: -@ngrid-gutter-width;
-  }
+  // [dir=rtl] & {
+  //   margin-right: -@ngrid-gutter-width;
+  // }
 }
 
 .centered,

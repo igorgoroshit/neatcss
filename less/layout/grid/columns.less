@@ -30,20 +30,19 @@
 .row .col-8,
 .row .col-9,
 .row .col-10,
-.row .col-11
-/*temp .row .col-12 */ {
+.row .col-11,
+.row .col-12 {
 
   [dir=ltr] & {
     float: left;
-    margin-left: @ngrid-gutter-width;
   }
 
   [dir=rtl] & {
     float: right;
-    margin-right: @ngrid-gutter-width;
   }
-  
-  /*margin-bottom: @ngrid-gutter-width;*/
+
+  margin-left: @ngrid-gutter-width / 2;
+  margin-right: @ngrid-gutter-width / 2;
 }
 
 
@@ -60,7 +59,3 @@
 .grid .col-11, .row .col-11 { .col(11); }
 .grid .col-12, .row .col-12 { .col(12); }
 
-.row .col-12 {
-  width: 100%;
-  /*margin-bottom: @ngrid-gutter-width;*/
-}
