@@ -1,0 +1,60 @@
+// TABS AND PILLS
+// -------------
+
+// Common styles
+.tabs{
+  .clearfix;
+   border-bottom: 1px solid #ddd;
+   white-space: nowrap;
+   overflow: hidden;
+}
+
+.tabs_tab {
+  float: left;
+  margin-bottom: -1px;
+}
+
+.tabs_tab {
+  padding-right: 12px;
+  padding-left: 12px;
+  margin-right: 2px;
+  line-height: 14px; // keeps the overall height an even number
+  position: relative;
+}
+
+// Actual tabs (as links)
+.tabs_tab_link {
+  display: inline-block;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  line-height: @base-line;
+  border: 1px solid #bcbdc0;
+  border-radius: 4px 4px 0 0;
+  background-color: #bcbdc0;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    border-color: @color-white;
+  }
+  color: @color-black;
+  margin-bottom: -1px;
+  text-align: center;
+  position: relative;
+  text-decoration: none;
+}
+
+// .tabs_tab_link span {
+//   transform: perspective(-100px) rotateX(-30deg);
+// }
+
+// Active state, and it's :hover/:focus to override normal :hover/:focus
+.tabs_tab.active,
+.tabs_tab:hover,
+.tabs_tab:focus {
+  color: @color-black;
+  background-color: @color-white;
+  border: 1px solid #ddd;
+  border-bottom-color: transparent;
+  cursor: default;
+  z-index: 100;
+}

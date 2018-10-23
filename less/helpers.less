@@ -3,79 +3,148 @@
 .group {
 	.clearfix;
 }
+
 .hide {
 	display: none;
 }
+
 .highlight {
 	background-color: #f7f3e2;
 }
+
 .big {
 	font-size: @font-size-big;
 }
+
 .small {
 	font-size: @font-size-small;
 }
+
 .smaller {
 	font-size: @font-size-smaller;
 }
+
 .nowrap,
 .nowrap td {
 	white-space: nowrap;
 }
+
 .req,
 .required {
 	font-weight: normal;
 	color: @color-red;
 }
+
 .error {
 	color: @color-red;
 }
+
 .success {
 	color: @color-green;
 }
+
 .text-centered {
 	text-align: center;
 }
+
 .text-right {
 	text-align: right;
 }
+
 .last {
 	margin-right: 0 !important;
 }
+
 .pause {
 	margin-bottom: @base-line / 2 !important;
 }
+
 .end {
 	margin-bottom: 0 !important;
 }
+
 .normal {
 	font-weight: normal;
 }
+
 .light {
 	font-weight: 300;
 }
+
 .bold {
 	font-weight: bold;
 }
+
 .italic {
 	font-style: italic;
 }
-.left {
+
+//float-start
+.left,
+.pull-left {
 	float: left;
 }
-.right {
+
+
+//float-end
+.right,
+.pull-rigth {
 	float: right;
 }
+
+.pull-start {
+	& [dir=rtl] {
+		float: right;
+	}
+
+	& [dir=ltr] {
+		float: left;
+	}
+}
+
+.pull-end {
+	& [dir=rtl] {
+		float: left;
+	}
+
+	& [dir=ltr] {
+		float: right;
+	}
+}
+
+.text-start {
+	& [dir=rtl] {
+		text-align: right;
+	}
+
+	& [dir=ltr] {
+		text-align: left;
+	}
+}
+
+.text-end {
+	& [dir=rtl] {
+		text-align: left;
+	}
+
+	& [dir=ltr] {
+		text-align: right;
+	}
+}
+
 .upper {
 	text-transform: uppercase;
 }
+
 .list-flat {
 	margin-left: 0;
 	list-style: none;
 }
+
 .color-black {
 	color: @color-black;
 }
+
 .color-white {
 	color: @color-white;
 }
