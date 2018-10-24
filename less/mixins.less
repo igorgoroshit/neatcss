@@ -258,3 +258,33 @@
 		box-shadow: 0 1px 3px rgba(red(@color-dark), green(@color-dark), blue(@color-dark), .6) inset;
 	}
 }
+
+
+// Buttons
+.button(@bg1-color, @bg2-color, @border-color, @text-color, @text-shadow: 0 -1px 0 rgba(0,0,0,.25)) {
+
+	color: @text-color;
+	background-color: mix(@bg1-color, @bg2-color, 60%);
+	background-image: linear-gradient(to bottom, @bg1-color, @bg2-color); // Standard, IE10
+	background-repeat: repeat-x;
+	filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@bg1-color),argb(@bg2-color))); // IE9 and down
+  border-color: @border-color @border-color darken(@border-color, 15%);
+
+	&:hover {
+		background: none;
+		background-color: @bg2-color;
+	}
+
+	&.active,
+	&.btn-active {
+		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+	}
+
+	&.active,
+	&.disabled,
+	&[disabled],
+	&.button[disabled] {
+		background-color: @bg2-color;
+	}
+
+}
